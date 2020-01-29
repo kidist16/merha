@@ -1,0 +1,41 @@
+
+{{ define "user.ticket.layout" }}
+{{ template "user.navbar" . }}
+{{ template "user.ticket.content" . }}
+{{ template "user.footer" . }}
+{{ end }}
+
+{{ define "user.ticket.content"}}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+
+    <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2>Sport betting Tickets</h2>
+    </div>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">user_id</th>
+            <th scope="col">bet_id</th>
+            <th scope="col">sport_id</th>
+            <th scope="col">leuge</th>
+            <th scope="col">match_result</th>
+            <th scope="col">Satus</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+            {{ range . }}
+          <tr>
+            <th scope="row"> {{ .bet_id }} </th>
+            <td> {{ .user_id }} </td>
+            <td> {{ .sport_id }} </td>
+            <td> {{ if .Status }} Checked In {{ else }} Waiting {{ end }}<a href="/user/ticket/update?id={{ .ID }}"> Check In</a> </td>
+            <td> </td>
+            <td> <a href="/user/ticket?id={{ .matchStats }}">ticket</a> </td>
+          </tr>
+          {{ end }}
+          </tbody>
+        </table>
+</main>
+{{ end }}

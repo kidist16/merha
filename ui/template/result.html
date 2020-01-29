@@ -24,7 +24,11 @@
   <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
 <body>
-
+    {{ define "result.layout" }}
+    {{ template "navbar" . }}
+    {{ template "result.content" . }}
+    {{ template "footer" . }}
+    {{ end }}
   <!-- preloader start -->
   <div id="preloader"></div>
   <!-- preloader end -->
