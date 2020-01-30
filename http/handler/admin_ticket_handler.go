@@ -12,7 +12,7 @@ type TicketHandler struct {
 }
 
 // NewTicketHandler initializes and returns new TicketHandler
-func NewTicketHandler(T *template.Template, tSrv book.TicketService) *TicketHandler {
+func NewTicketHandler(T *template.Template, tSrv sportBeting.TicketService) *TicketHandler {
 	return &TicketHandler{tmpl: T, ticketSrv: tSrv}
 }
 

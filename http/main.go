@@ -3,20 +3,22 @@ package main
 import (
 	"html/template"
 	"net/http"
+     
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
 func createTables(dbconn *gorm.DB) []error {
-	errs := dbconn.CreateTable(&entity.Login{}, &entity.Loyalty{}).GetErrors()
+	errs := dbconn.CreateTable(&entity.Login{}, &entity.match{}).GetErrors()
 	if errs != nil {
 		return errs
 	}
 	return nil
 }
 
+
 func main() {
 
-	dbconn, err := gorm.Open("postgres", "postgres://postgres:Postgres@localhost/sportbetdb?sslmode=disable")
+	dbconn, err := gorm.Open("postgres", "postgres://postgres:Postgres@localhost/sportBetting?sslmode=disable")
 	if err != nil {
 		panic(err)
 	}
@@ -33,6 +35,9 @@ func main() {
 	roleServ := usrvim.NewRoleService(roleRepo)
 	loginRepo := urepim.NewLoginGormRepo(dbconn)
 	loginServ := usrvim.NewLoginService(loginRepo)
+
+	
+
 	fs := http.FileServer(http.Dir("../../ui/assets"))
 	mux := http.NewServeMux()
 	mux.Handle("/assets/", http.StripPrefix("/assets/", fs))

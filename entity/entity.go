@@ -1,21 +1,21 @@
 package entity
 
 type userPayment struct {
-	payment_id     uint
-	user_id        uint
+	ID     uint
+	userid        uint
 	
 }
 
 type userTransaction struct {
-	Transaction_id      uint
-	user_id             uint
+	Transactionid      uint
+	userid             uint
 	
 	
 }
 
 
 type userBet struct {
-	userBet_id  uint
+	userBetId  uint
 	user_id     uint
 	bet_id      uint
 }
@@ -48,26 +48,20 @@ type teams struct{
 }
 type bets struct{
 	bet_id     uint
-	match_id   uint
-	decription
-	startDate
-	endDate
-	odds
+	match_id   uint 
+	startDate   uint
+	
 
 }
 type matchs struct{
 	match_id  uint
 	sport_id   uint
-	home_team_id
-	away_team_id
-	data
+	
 
 }
 type matchStat struct{
   matchStat_id     uint
   match_id         uint
-	home_team_result
-	away_team_result
 }
 type Login struct {
 	ID       uint

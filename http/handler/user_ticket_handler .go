@@ -40,8 +40,8 @@ func (th *TicketHandler) UpdateTicket(w http.ResponseWriter, r *http.Request) {
 
 	} else if r.Method == http.MethodPost {
 
-		tkt := &entity.Ticket{}
-		id, _ := strconv.Atoi(r.FormValue("id"))
+		tkt := &entity.match{}
+		id, _ := strconv.Atoi(r.FormValue("mid"))
 		fId, _ := strconv.Atoi(r.FormValue("bet_id"))
 		uId, _ := strconv.Atoi(r.FormValue("user_id"))
 		status, _ := strconv.ParseBool(r.FormValue("status"))
