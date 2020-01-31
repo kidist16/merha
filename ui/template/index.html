@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+    {{ define "index.layout" }}
+
+    {{ template "navbar" . }}
+    {{ template "index.content" . }}
+    
+    {{ end }}
+    
+    {{ define "index.content" }}
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +53,8 @@
               <li><a href="in-play.html">In-play</a></li>
               <li><a href="statistics.html">Statistics</a></li>
               <li><a href="result.html">Results</a></li>
-              <li class="menu_has_children"><a href="#0">pages</a>
+              <li><a href="login.html">Login</a></li>
+              <!-- <li class="menu_has_children"><a href="#0">pages</a>
                 <ul class="sub-menu">
                   <li><a href="about.html">About us</a></li>
                   <li><a href="service.html">Services</a></li>
@@ -54,16 +63,16 @@
                   <li><a href="faq.html">FAQ</a></li>
                   <li><a href="privacy.html">Privacy</a></li>
                   <li><a href="error-404.html">ERROR Page</a></li>
-                </ul>
+                </ul> -->
               </li>
-              <li class="menu_has_children"><a href="#0">blog</a>
+              <!-- <li class="menu_has_children"><a href="#0">blog</a>
                 <ul class="sub-menu">
                   <li><a href="blog.html">Blog page</a></li>
                   <li><a href="blog-details.html">blog single</a></li>
                 </ul>
               </li>
               <li><a href="contact.html">contact us</a></li>
-            </ul>
+            </ul> -->
           </div>
         </nav>
       </div>
@@ -99,10 +108,7 @@
             </div>
           </div>
           <div class="col-lg-3 col-md-4">
-              <div class="content">
-                <span>Promo Video</span>
-                <p>Watch our intro</p>
-              </div>
+            >
             </div>
           </div>
           <div class="col-lg-5 col-md-4">
@@ -123,7 +129,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-6">
           <div class="section-header text-center">
-            <h2 class="section-title">Butlar Feature</h2>
+            <h2 class="section-title">Ethio sport betting Feature</h2>
             <p>On insensible possession oh particular attachment at excellence in. The books arose but miles happy she.</p>
           </div>
         </div>
@@ -2545,4 +2551,5 @@
   <!-- main js file -->
   <script src="../assets/js/main.js"></script>
 </body>
+{{ end }}
 </html>
