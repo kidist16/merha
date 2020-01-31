@@ -2,76 +2,58 @@ package entity
 
 type userPayment struct {
 	ID     uint
-	userid        uint
-	
+	userid uint
 }
 
-type userTransaction struct {
-	Transactionid      uint
-	userid             uint
-	
-	
-}
-
-
-type userBet struct {
-	userBetId  uint
-	user_id     uint
-	bet_id      uint
+type Ticket struct {
+	ID       uint
+	Status   bool
+	FlightID uint
+	UserID   uint
 }
 
 type User struct {
-	user_id      uint
-	FName        string     `gorm:"type:varchar(255);not null"`
-	LName        string     `gorm:"type:varchar(255);not null; unique"`
-	cellphone     uint     
+	userid    uint
+	FName     string `gorm:"type:varchar(255);not null"`
+	LName     string `gorm:"type:varchar(255);not null; unique"`
+	cellphone uint
 }
 
 type userTeam struct {
-	userTeam_id   uint
-	Sport_id      uint
-	
+	userTeamid uint
+	Sportid    uint
 }
 type sport struct {
-	Sport_id    uint
-	sport_name   string
-
+	Sportid   uint
+	sportname string
 }
 type leagues struct {
-	leagues_id uint
-	sport_id   uint
+	leagueid uint
+	sportid  uint
 }
-type teams struct{
-	teams_id     uint
-	leagues_id   uint
-
+type teams struct {
+	teamsid  uint
+	leagueid uint
 }
-type bets struct{
-	bet_id     uint
-	match_id   uint 
-	startDate   uint
-	
-
+type bets struct {
+	betid     uint
+	matchid   uint
+	startDate uint
 }
-type matchs struct{
-	match_id  uint
-	sport_id   uint
-	
-
+type matchs struct {
+	matchid uint
+	sportid uint
 }
-type matchStat struct{
-  matchStat_id     uint
-  match_id         uint
+type matchStat struct {
+	matchStatid uint
+	matchid     uint
 }
 type Login struct {
 	ID       uint
 	Username string `gorm:"type:varchar(255);not null; unique"`
 	Password string `gorm:"type:varchar(255);not null"`
-	UserID 	 uint
+	UserID   uint
 }
-
-
-
 
 type Role struct {
 	ID    uint
@@ -80,30 +62,7 @@ type Role struct {
 }
 
 type Session struct {
-	ID         uint
-	UUID       string `gorm:"type:varchar(255);not null"`
-	Expires    int64  `gorm:"type:varchar(255);not null"`
+	ID      uint
+	UUID    string `gorm:"type:varchar(255);not null"`
+	Expires int64  `gorm:"type:varchar(255);not null"`
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
